@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://com.alfaris.ipsh.subscription.soap"
+	xmlns:tns="http://com.alfaris.ipsh.subscription.soap"
+	elementFormDefault="qualified">
+
+	<complexType name="SubscriptionDto">
+		<sequence>
+			
+			<element name="mobileNumber" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="\+?[0-9]{10,15}" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="userName" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,10}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="email" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern
+							value="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="platforms" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,20}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="fullName" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,20}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="createdBy" type="string" minOccurs="0" />
+			<element name="modifiedBy" type="string" minOccurs="0" />
+			<element name="verifiedBy" type="string" minOccurs="0" />
+			<element name="status" type="string" minOccurs="0" />
+			<element name="comments" type="string" minOccurs="0" />
+			<element name="paymentMethod" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,10}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="paymentBy" type="string" minOccurs="0" />
+			<element name="duration" minOccurs="0">
+				<simpleType>
+					<restriction base="long">
+						<minInclusive value="1" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="price" minOccurs="0">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="1" />
+						<maxInclusive value="100000" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="fPrice" type="double" minOccurs="0" />
+			<element name="creationTime" type="dateTime" minOccurs="0" />
+			<element name="modificationTime" type="dateTime"
+				minOccurs="0" />
+			<element name="verificationTime" type="dateTime"
+				minOccurs="0" />
+			<element name="subscriptionDate" type="date" minOccurs="0" />
+			<element name="patmentDate" type="dateTime" minOccurs="0" />
+			<element name="endSubscriptionDate" type="date" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="SubscriptionDtoResponce">
+		<sequence>
+			<element name="uniqUserId" type="long" minOccurs="0" />
+			<element name="mobileNumber" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="\+?[0-9]{10,15}" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="uniqSubId" type="string" minOccurs="0" />
+			<element name="userName" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,10}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="email" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern
+							value="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="platforms" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,20}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="fullName" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,20}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="createdBy" type="string" minOccurs="0" />
+			<element name="modifiedBy" type="string" minOccurs="0" />
+			<element name="verifiedBy" type="string" minOccurs="0" />
+			<element name="status" type="string" minOccurs="0" />
+			<element name="comments" type="string" minOccurs="0" />
+			<element name="paymentMethod" minOccurs="0">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="^[A-Za-z]{1,10}$" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="paymentBy" type="string" minOccurs="0" />
+			<element name="duration" minOccurs="0">
+				<simpleType>
+					<restriction base="long">
+						<minInclusive value="1" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="price" minOccurs="0">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="1" />
+						<maxInclusive value="100000" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="fPrice" type="double" minOccurs="0" />
+			<element name="creationTime" type="dateTime" minOccurs="0" />
+			<element name="modificationTime" type="dateTime"
+				minOccurs="0" />
+			<element name="verificationTime" type="dateTime"
+				minOccurs="0" />
+			<element name="subscriptionDate" type="date" minOccurs="0" />
+			<element name="patmentDate" type="dateTime" minOccurs="0" />
+			<element name="endSubscriptionDate" type="date" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+
+	<complexType name="JSONObject">
+		<sequence>
+			<element name="key" type="string" />
+			<element name="value" type="string" />
+		</sequence>
+	</complexType>
+	<complexType name="ServiceResponse">
+		<sequence>
+			<element name="code" type="string" />
+			<element name="message" type="string" />
+			<element name="details" type="tns:JSONObject"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+	<element name="AddSubscriptionRequest">
+		<complexType>
+			<sequence>
+				<element name="SubscriptionDto" type="tns:SubscriptionDto" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="AddSubscriptionResponse">
+		<complexType>
+			<sequence>
+				<element name="ServiceResponse" type="tns:ServiceResponse" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="UpdateSubscriptionRequest">
+		<complexType>
+			<sequence>
+				<element name="SubscriptionDto" type="tns:SubscriptionDto" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="UpdateSubscriptionResponse">
+		<complexType>
+			<sequence>
+				<element name="ServiceResponse" type="tns:ServiceResponse" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+</schema>

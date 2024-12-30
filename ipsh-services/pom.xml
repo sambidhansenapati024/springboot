@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.alfaris.ipsh</groupId>
+	<artifactId>ipsh-services</artifactId>
+	<version>V-1.0</version>
+	<packaging>pom</packaging>
+	<name>ipsh-services</name>
+	<description>Multi-Module Project with Maven</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.13</version>
+		<!-- <version>3.0.7</version> -->
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<modules>
+		<module>signature-service</module>
+		<module>alm-system-service</module>
+		<module>auth-service</module>
+		<module>derayah-config-server</module>
+		<module>country-service</module>
+		<module>department-service</module>
+		<module>derayah-gateway-service</module>
+		<module>mapper-service</module>
+		<module>outgoing-credit-transfer-service</module>
+		<module>payroll-service</module>
+		<module>product-service</module>
+		<module>derayah-registry-service</module>
+		<module>security-service</module>
+		<module>proxy-service</module>
+		<module>notification-service</module>
+		<module>bic-service</module>
+		<module>incoming-credit-transfer-service</module>
+		<module>adapter-service</module>
+		<module>stand-in-process-service</module>
+		<module>push-notification-service</module>
+		<module>error-notification-service</module>
+		<module>external-errorcode-service</module>
+		<module>sadad-service</module>
+		<module>sarie-service</module>
+		<module>liquidity-service</module>
+		<module>rtp-service</module>
+		<module>template-service</module>
+		<module>kyc-service</module>
+		<module>sub-service</module>
+		
+	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.retry</groupId>
+			<artifactId>spring-retry</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jasypt/jasypt -->
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+		<!-- newly added to fix vul (given by prosant) -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<!-- <version>3.21.7</version> -->
+			<version>3.25.5</version>  <!-- vul fix-->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.yaml</groupId>
+					<artifactId>snakeyaml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<!--<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15to18</artifactId>
+			<version>1.74</version>
+		</dependency>-->
+	</dependencies>
+</project>
